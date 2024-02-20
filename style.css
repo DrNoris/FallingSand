@@ -1,0 +1,73 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+canvas {
+  display: block;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; 
+}
+
+.color_picker_button {
+  border: none;
+  color: rgb(120, 115, 129);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 60px;
+  cursor: pointer;
+  width: 00px;
+  height: 100px;
+  flex-grow: 1;
+  transition: opacity 0.3s ease;
+}
+
+
+
+.color_picker_button:hover {
+  opacity: 0.75;
+  width: 20%;
+}
+#favcolor{
+  width: 10%;
+  height: 100px;
+  padding: 0%;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pink{
+  background-color: #F81894;
+}
+
+.cyan{
+  background-color: #0EAEAE;
+}
+
+.grey{
+  background-color: #757d75;
+}
