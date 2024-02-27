@@ -25,7 +25,7 @@ function Make2DArray(cols, rows) {
 }
 
 function setup() {
-  window.alert("Salut! Mersi ca ai intrat pe proiectul meu 😘");
+ // window.alert("Salut! Mersi ca ai intrat pe proiectul meu 😘");
   frameRate(45);
   createCanvas(width, height).center('horizontal');
   mainstack = new Stack();
