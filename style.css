@@ -1,0 +1,207 @@
+/*Responsive design phone*/
+
+  html, body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+
+  canvas {
+    display: block;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between; 
+  }
+  
+  .color_picker_button {  
+    border: none;
+    color: rgb(120, 115, 129);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 60px;
+    cursor: pointer;
+    width: 00px;
+    height: 60px;
+    flex-grow: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  #favcolor{
+    width: 15%;
+    height: 60px;
+    padding: 0%;
+  }
+
+  .green {
+    display: none;
+    background-color: green;
+  }
+  
+  .red {
+    display: none;
+    background-color: red;
+  }
+  
+  .blue {
+    background-color: blue;
+  }
+  
+  .orange {
+    background-color: orange;
+  }
+  
+  .yellow {
+    background-color: yellow;
+  }
+  
+  .pink{
+    background-color: #F81894;
+  }
+  
+  .cyan{
+    background-color: #0EAEAE;
+  }
+  
+  .grey{
+    display: none;
+    background-color: #757d75;
+  }
+
+  .sliders_container {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    margin: auto;
+  }
+  
+  .slider_container {
+    height: 100%;
+    display: grid; /* Change from block to inline-block */
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    padding-left: 10px;
+  }
+  
+  .slider_container label {
+    margin: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 28px; /* Adjust font size */
+  }
+  
+  .slider_container input[type="range"] {
+    margin: auto;
+    width: 200px; /* Adjust as needed */
+  }
+/*Responsive design screen*/
+@media only screen and (min-width: 768px){
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+  
+  canvas {
+    display: block;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between; 
+  }
+  
+  .color_picker_button {
+    border: none;
+    color: rgb(120, 115, 129);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 60px;
+    cursor: pointer;
+    width: 00px;
+    height: 100px;
+    flex-grow: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .color_picker_button:hover {
+    opacity: 0.75;
+  }
+
+  #favcolor{
+    width: 10%;
+    height: 100px;
+    padding: 0%;
+  }
+  
+  .green {
+    background-color: green;
+  }
+  
+  .red {
+    background-color: red;
+  }
+  
+  .blue {
+    background-color: blue;
+  }
+  
+  .orange {
+    background-color: orange;
+  }
+  
+  .yellow {
+    background-color: yellow;
+  }
+  
+  .pink{
+    background-color: #F81894;
+  }
+  
+  .cyan{
+    background-color: #0EAEAE;
+  }
+  
+  .grey{
+    background-color: #757d75;
+  }
+  
+  .sliders_container {
+    height: 40px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    margin: auto;
+  }
+  
+  .slider_container {
+    height: 100%;
+    display: inline-block; /* Change from block to inline-block */
+    margin-right: 20px; /* Adjust spacing between sliders */
+    width: 45%;
+  }
+  
+  .slider_container label {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 10px;
+    color: rgb(220, 215, 228);
+    font-size: 30px; /* Adjust font size */
+  }
+  
+  .slider_container input[type="range"] {
+    background: green;
+    height: 20px;
+    width: 80%; /* Adjust as needed */
+  }
+  } 
+
+
