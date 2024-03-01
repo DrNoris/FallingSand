@@ -194,7 +194,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-right: 10px;
     color: rgb(220, 215, 228);
-    font-size: 30px; /* Adjust font size */
+    font-size: 25px; /* Adjust font size */
   }
   
   .slider_container input[type="range"] {
