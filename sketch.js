@@ -4,10 +4,12 @@ let cols, rows;
 let height;
 let changed;
 let mainstack;
-
+let size = 15;
+let density = 50;
 document.addEventListener("DOMContentLoaded", function() {
-  let buttonContainerHeight = document.querySelector(".color_picker_button").offsetHeight;
-  height = window.innerHeight - buttonContainerHeight;
+  let buttonContainerHeight = document.getElementById("favcolor").offsetHeight;
+  let sliderContainerHeight = document.querySelector(".slider_container").offsetHeight;
+  height = window.innerHeight - buttonContainerHeight - sliderContainerHeight;
 });
 let width = window.innerWidth;
 let colorPicker = "orange";
@@ -51,8 +53,7 @@ function MouseIsPressed() {
   let mouseRow = floor(mouseY / w);
 
   if (withinCols(mouseCol) && withinRows(mouseRow)) {
-    let matrix = 10;
-    let sqr = floor(matrix / 2);
+    let sqr = floor(size / 2);
 
      for (let i = -sqr; i <= sqr; i++){
       for (let j = -sqr; j <= sqr; j++){
@@ -60,7 +61,7 @@ function MouseIsPressed() {
           let mouseColaux = mouseCol + i;
           let mouseRowaux = mouseRow + j;
           if (withinCols(mouseColaux) && withinRows(mouseRowaux)) {
-            if (random(100) < 75) {
+            if (random(100) < density ) {
               if (grid[mouseColaux][mouseRowaux] === ""){
                 grid[mouseColaux][mouseRowaux]= colorPicker;
                 let value = [mouseColaux, mouseRowaux, colorPicker];
@@ -171,7 +172,9 @@ function change_direction(){
 
 function draw() {
   if (mouseIsPressed || !mainstack.isEmpty() || !auxstack.isEmpty()){
-  background(0);
+  let background_color = getComputedStyle(document.querySelector("html")).backgroundColor;
+  
+  background(background_color);
 
   if (mouseIsPressed) MouseIsPressed();
 
@@ -210,14 +213,25 @@ function draw() {
         changed = false;
         for (let buttonIndex = colorButtons.length - 1; buttonIndex >= 0 ; --buttonIndex){
             let background = getComputedStyle(colorButtons[buttonIndex]);
-            color2 = background.backgroundColor;
+            if (background.display != 'none'){
+              color2 = background.backgroundColor;
 
-            colorButtons[buttonIndex].setAttribute('style', `background-color: ${color1};`);
- 
-            color1 = color2;       
+              colorButtons[buttonIndex].setAttribute('style', `background-color: ${color1};`);
+   
+              color1 = color2; 
+            }                 
         }
       }
       
+  let sizeListener = document.getElementById("SizeSlider");
+  sizeListener.oninput = function(){
+    size = sizeListener.value;
+  }
+
+  let densityListener = document.getElementById("DensitySlider");
+  densityListener.oninput = function(){
+    density = densityListener.value;
+  }
   auxgrid = Make2DArray(cols, rows);
 
   change_direction();
