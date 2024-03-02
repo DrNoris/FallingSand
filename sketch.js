@@ -62,9 +62,14 @@ function MouseIsPressed() {
           let mouseRowaux = mouseRow + j;
           if (withinCols(mouseColaux) && withinRows(mouseRowaux)) {
             if (random(100) < density ) {
-              if (grid[mouseColaux][mouseRowaux] === ""){
-                grid[mouseColaux][mouseRowaux]= colorPicker;
+              if (grid[mouseColaux][mouseRowaux] === "" && colorPicker != "rgb(255, 255, 255)"){
+                grid[mouseColaux][mouseRowaux] = colorPicker;
                 let value = [mouseColaux, mouseRowaux, colorPicker];
+                mainstack.push(value);
+              }
+              else if (colorPicker == "rgb(255, 255, 255)" && grid[mouseColaux][mouseRowaux] !== ""){
+                grid[mouseColaux][mouseRowaux] = "";
+                let value = [mouseColaux, mouseRowaux, ""];
                 mainstack.push(value);
               }
             }
@@ -133,8 +138,6 @@ function change_direction(){
       auxgrid[i][j] = "";
     }
   }
-  
-  
   /*for (let j = rows - 1; j >= 0; j--) {
     for (let i = cols - 1; i >= 0; i--) {
       let state = grid[i][j];
@@ -194,6 +197,8 @@ function draw() {
 
         // Set the colorPicker variable to the background color
       colorPicker = background.backgroundColor;
+      if (getComputedStyle(button).backgroundImage == 'url("eraser.png")')
+        colorPicker = "";
     });
   });
 
@@ -211,7 +216,7 @@ function draw() {
       if (mouseIsPressed && changed == true) {
         let color1 = colorPicker;
         changed = false;
-        for (let buttonIndex = colorButtons.length - 1; buttonIndex >= 0 ; --buttonIndex){
+        for (let buttonIndex = colorButtons.length - 1; buttonIndex > 0 ; --buttonIndex){
             let background = getComputedStyle(colorButtons[buttonIndex]);
             if (background.display != 'none'){
               color2 = background.backgroundColor;
