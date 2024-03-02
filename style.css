@@ -36,9 +36,15 @@
     padding: 0%;
   }
 
-  .green {
-    display: none;
-    background-color: green;
+  .eraser {
+    background-image: url("eraser.png");
+    display: inline-block;
+    height: 60px;
+    background-size: contain; /* Change from 'cover' to 'contain' */
+    background-color: white;
+    flex-grow: 1;
+    background-repeat: no-repeat;
+    background-position: center center;
   }
   
   .red {
@@ -51,6 +57,7 @@
   }
   
   .orange {
+    display: none;
     background-color: orange;
   }
   
@@ -141,10 +148,19 @@
     height: 80px;
     padding: 0%;
   }
-  
-  .green {
-    background-color: green;
+ 
+  .eraser {
+    background-image: url("eraser.png");
+    display: inline-block;
+    height: 80px;
+    background-size: contain; /* Change from 'cover' to 'contain' */
+    background-color: white;
+    flex-grow: 1;
+    background-repeat: no-repeat;
+    background-position: center center;
   }
+
+
   
   .red {
     background-color: red;
